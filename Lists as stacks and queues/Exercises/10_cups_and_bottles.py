@@ -12,7 +12,7 @@ while cups_capacity and bottles_filled:
     if current_bottle < current_cup:
 
         # cups_capacity.appendleft(current_cup - current_bottle)
-        
+
         current_cup -= current_bottle
 
         while current_cup > 0:
