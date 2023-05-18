@@ -11,3 +11,8 @@ for i in range(n + m):
 
 unique_numbers_in_both_sets = n_set.intersection(m_set)
 print(*unique_numbers_in_both_sets, sep='\n')
+
+# n_set = {int(input()) for _ in range(n)}
+# m_set = {int(input()) for _ in range(m)}
+#
+# print(*n_set.intersection(m_set), sep='\n')
