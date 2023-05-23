@@ -1,15 +1,15 @@
 rows = int(input())
 
-matrix = []
+matrix = [[int(x) for x in input().split()] for _ in range(rows)]
 
-for _ in range(rows):
-    matrix.append([int(x) for x in input().split()])
+sum_primary_diagonal = 0
+sum_secondary_diagonal = 0
 
-primary_diagonal = [matrix[i][i] for i in range(rows)]
-matrix_turned_left = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]) - 1, -1, -1)]
-secondary_diagonal = [matrix_turned_left[i][i] for i in range(rows)]
+for i in range(rows):
+    sum_primary_diagonal += matrix[i][i]
+    sum_secondary_diagonal += matrix[i][rows - i - 1]
 
-print(abs(sum(primary_diagonal) - sum(secondary_diagonal)))
+print(abs(sum_primary_diagonal - sum_secondary_diagonal))
 
 
 # 3

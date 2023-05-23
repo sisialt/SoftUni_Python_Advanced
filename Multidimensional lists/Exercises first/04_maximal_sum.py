@@ -1,10 +1,6 @@
 rows, cols = [int(x) for x in input().split()]
 
-matrix = []
-new_matrix = []
-
-for _ in range(rows):
-    matrix.append([int(x) for x in input().split()])
+matrix = [[int(x) for x in input().split()] for _ in range(rows)]
 
 max_sum = float('-inf')
 max_submatrix = []

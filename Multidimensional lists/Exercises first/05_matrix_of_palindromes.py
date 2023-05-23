@@ -10,4 +10,14 @@ for row in range(rows):
 
 [print(*inner_list) for inner_list in matrix]
 
+# rows, cols = [int(x) for x in input().split()]
+#
+# start = ord('a')
+#
+# for row in range(start, start + rows):
+#     for col in range(row, row + cols):
+#         print(f"{chr(row)}{chr(col)}{chr(row)}", end=" ")
+#
+#     print()
+
 # 4 6

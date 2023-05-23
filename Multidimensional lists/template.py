@@ -1,10 +1,12 @@
 # READ MATRIX
 rows, cols = [int(x) for x in input().split()]
 
-matrix = []
+# matrix = []
+#
+# for _ in range(rows):
+#     matrix.append([int(x) for x in input().split()])
 
-for _ in range(rows):
-    matrix.append([int(x) for x in input().split()])
+matrix = [[int(x) for x in input().split()] for _ in range(rows)]
 
 
 # CREATE MATRIX
@@ -28,8 +30,9 @@ for i in range(rows):
         current_el = matrix[i][j]
 
 
-# PRIMARY DIAGONAL
+# PRIMARY &DIAGONAL
 primary_diagonal = [matrix[i][i] for i in range(rows)]
+secondary_diagonal = [matrix[i][rows - i - 1] for i in range(rows)]
 
 
 # PRINT UNPACKED MATRIX
