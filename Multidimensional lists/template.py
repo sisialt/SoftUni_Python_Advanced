@@ -1,3 +1,16 @@
+directions = {
+    "up": (-1, 0),
+    "down": (1, 0),
+    "left": (0, -1),
+    "right": (0, 1)
+}
+# directions = {
+#     "left": lambda r, c: [r, (c - 1) % SIZE],
+#     "right": lambda r, c: [r, (c + 1) % SIZE],
+#     "up": lambda r, c: [(r - 1) % SIZE, c],
+#     "down": lambda r, c: [(r + 1) % SIZE, c],
+# }
+
 # READ MATRIX
 rows, cols = [int(x) for x in input().split()]
 matrix = [[int(x) for x in input().split()] for _ in range(rows)]
@@ -11,7 +24,7 @@ matrix = [[int(x) for x in input().split()] for _ in range(rows)]
 for row in range(rows):
     matrix.append([])
     for col in range(cols):
-        matrix[row].append()
+        matrix[row].append(var)
 
 
 # CREATE CURRENT SUBMATRIX
@@ -39,6 +52,21 @@ secondary_diagonal = [matrix[i][rows - i - 1] for i in range(rows)]
 
 # PRINT MATRIX AS LISTS
 [print(inner_list) for inner_list in matrix]
+
+
+# FIND ROW, COL WHEN GOING OUTSIDE MATRIX from the opposite side in the same direction
+last_row = directions[direction][0] * steps
+last_col = directions[direction][1] * steps
+if last_row < 0:
+    last_row = rows - abs(last_row % rows)
+elif last_row >= rows:
+    last_row = last_row % rows
+
+if last_col < 0:
+    last_col = last_col % cols
+elif last_col >= cols:
+    last_col = cols - abs(last_col % cols)
+
 
 
 # my MATRIX TURNED LEFT
