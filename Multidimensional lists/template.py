@@ -4,6 +4,17 @@ directions = {
     "left": (0, -1),
     "right": (0, 1)
 }
+directions = {
+    "up": (-1, 0),
+    "down": (1, 0),
+    "left": (0, -1),
+    "right": (0, 1),
+    "left up diagonal": (-1, -1),
+    "left down diagonal": (1, -1),
+    "right up diagonal": (-1, 1),
+    "right down diagonal": (1, 1)
+}
+# TRAVERSE WHEN INDEX NOT IN RANGE # directions[command](*positions) / (row, col)
 # directions = {
 #     "left": lambda r, c: [r, (c - 1) % SIZE],
 #     "right": lambda r, c: [r, (c + 1) % SIZE],
@@ -18,6 +29,12 @@ matrix = [[int(x) for x in input().split()] for _ in range(rows)]
 #
 # for _ in range(rows):
 #     matrix.append([int(x) for x in input().split()])
+
+# for r in range(rows):
+#     line = input()
+#     matrix.append([])
+#     for i in range(len(line)):
+#         matrix[r].append(line[i])
 
 
 # CREATE MATRIX
